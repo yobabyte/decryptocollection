@@ -8,7 +8,7 @@ Useful during penetration testing/red team operations for obtaining credentials 
 # Contents
 [PRTG Network Manager](#prtg-network-manager)
 
-## [PRTG Network Manager](prtg/prtg_string_decryptor.py)
+## [PRTG Network Manager](prtg)
 Decryptor for encrypted strings such as `windowsloginpassword` from the `PRTG Configuration.dat` file.
 
 ### Configuration Location
