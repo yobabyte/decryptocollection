@@ -6,7 +6,40 @@ A personal collection of scripts for decrypting various things (mainly from prop
 Useful during penetration testing/red team operations for obtaining credentials for lateral movement.
 
 # Contents
+[TrueConf Server](#trueconf-server)
+
 [PRTG Network Manager](#prtg-network-manager)
+
+
+## [TrueConf Server](tcs)
+Decryptor for encrypted passwords with suffx **2**, such as `H323 Password2` or `LDAP Auth Password2`.
+
+### Download
+```sh
+wget https://raw.githubusercontent.com/ghettorce/decryptocollection/main/trueconf/tcs_decrypt_pass.py
+```
+
+### Usage
+```
+usage: tcs_decrypt_pass.py [-h] [--raw] -u USERNAME cipher_text
+
+TrueConf Server password decryptor
+
+positional arguments:
+  cipher_text           Encrypted value in the format "v2*timestamp*base64"
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --raw                 Do not decode decrypted text
+  -u USERNAME, --username USERNAME
+                        Salt value (user name)
+```
+
+### Examples
+```sh
+> tcs_decrypt_pass.py -u user1 "v2*1673949834*F9QuNbkd3pxE+F5WQUyywQ=="
+Qwerty!1
+```
 
 ## [PRTG Network Manager](prtg)
 Decryptor for encrypted strings such as `windowsloginpassword` from the `PRTG Configuration.dat` file.
